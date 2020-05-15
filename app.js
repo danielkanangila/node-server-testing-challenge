@@ -7,4 +7,9 @@ app.use(cors());
 
 app.use("/api", recipesRouter);
 
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500).json({ message: "An error occurred." });
+});
+
 module.exports = app;

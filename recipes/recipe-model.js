@@ -1,6 +1,10 @@
 const db = require("./../data/db-config");
 
 class Recipe {
+  findById(id) {
+    return db("recipes").where({ id }).first();
+  }
+
   getRecipes() {
     return db("recipes");
   }
